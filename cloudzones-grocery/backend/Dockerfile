@@ -3,7 +3,7 @@ FROM node:18
 WORKDIR /app
 
 # 👇 FIX: copy from parent folder
-COPY ../package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
