@@ -2,13 +2,13 @@ FROM node:18
 
 WORKDIR /app
 
-# 👇 FIX: copy from parent folder
-COPY ../package*.json ./
+# 👇 Copy from ROOT (because build context will be root)
+COPY package*.json ./
 
 RUN npm install
 
-# 👇 copy backend code only
-COPY . .
+# 👇 Copy backend code
+COPY backend/ .
 
 EXPOSE 5000
 
